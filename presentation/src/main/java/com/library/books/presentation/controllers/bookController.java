@@ -1,7 +1,7 @@
 package com.library.books.presentation.controllers;
 
 
-import com.library.books.domain.EntityBook;
+import com.library.books.domain.model.EntityBook;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
