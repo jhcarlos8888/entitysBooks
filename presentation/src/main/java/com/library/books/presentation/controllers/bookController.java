@@ -12,7 +12,7 @@ public class bookController {
 
     @GetMapping("/book")
     public EntityBook getBook(){
-        return new EntityBook(874L,"nameOfBook","descriptionBook");
+        return null;
     }
 
 }
