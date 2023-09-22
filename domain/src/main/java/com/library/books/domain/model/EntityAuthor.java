@@ -1,6 +1,7 @@
 package com.library.books.domain.model;
 
 
+import com.library.books.domain.dto.AuthorDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "authors")
@@ -23,4 +23,11 @@ public class EntityAuthor {
     private String secondName;
     @Column(name = "phone")
     private String phone;
+
+    public EntityAuthor(AuthorDTO authorDTO) {
+        this.id = authorDTO.getId();
+        this.firstName = authorDTO.getFirstName();
+        this.secondName = authorDTO.getSecondName();
+        this.phone = authorDTO.getPhone();
+    }
 }
