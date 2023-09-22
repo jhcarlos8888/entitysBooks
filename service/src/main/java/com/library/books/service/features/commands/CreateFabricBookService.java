@@ -3,7 +3,8 @@ package com.library.books.service.features.commands;
 
 import com.library.books.domain.dto.BookDTO;
 import com.library.books.domain.model.EntityBook;
-import com.library.books.persistence.repository.IBookRepository;
+import com.library.books.persistence.dbcontext.IAuthorDBContext;
+import com.library.books.persistence.dbcontext.IBookDBContext;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +12,11 @@ import java.util.List;
 @Service
 public class CreateFabricBookService {
 
-    private final IBookRepository iBookRepository;
+    private final IBookDBContext iBookDBContext;
 
-    public CreateFabricBookService(IBookRepository iBookRepository) {
-        this.iBookRepository = iBookRepository;
+    public CreateFabricBookService(IBookDBContext iBookDBContext) {
+        this.iBookDBContext = iBookDBContext;
+
     }
 
     public EntityBook createEntityBook(BookDTO bookDTO){
@@ -39,7 +41,7 @@ public class CreateFabricBookService {
     }
 
     public BookDTO save(BookDTO bookDTO) {
-        EntityBook entityBook = iBookRepository.save(createEntityBook(bookDTO));
+        EntityBook entityBook = iBookDBContext.saveEntityBook(createEntityBook(bookDTO));
         return createBookDTO(entityBook);
     }
 

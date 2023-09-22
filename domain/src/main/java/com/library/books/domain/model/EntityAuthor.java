@@ -2,10 +2,8 @@ package com.library.books.domain.model;
 
 
 import com.library.books.domain.dto.AuthorDTO;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Data

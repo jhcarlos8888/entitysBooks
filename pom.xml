@@ -19,7 +19,8 @@
 		<module>domain</module>
 		<module>persistence</module>
 		<module>service</module>
-	</modules>
+        <module>infrastructure</module>
+    </modules>
     <properties>
 		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>

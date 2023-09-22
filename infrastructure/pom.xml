@@ -9,29 +9,31 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.library.books.presentation</groupId>
-    <artifactId>presentation</artifactId>
+    <groupId>com.library.books.infrastructure</groupId>
+    <artifactId>infrastructure</artifactId>
 
     <dependencies>
         <dependency>
-                <groupId>com.library.books.domain</groupId>
-                <artifactId>domain</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.library.books.domain</groupId>
+            <artifactId>domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>com.library.books.service</groupId>
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.library.books.infrastructure</groupId>
-            <artifactId>infrastructure</artifactId>
+            <groupId>com.library.books.persistence</groupId>
+            <artifactId>persistence</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
-
 
 
 </project>

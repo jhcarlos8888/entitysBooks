@@ -2,19 +2,19 @@ package com.library.books.service.features.commands;
 
 import com.library.books.domain.dto.AuthorDTO;
 import com.library.books.domain.model.EntityAuthor;
+import com.library.books.persistence.dbcontext.IAuthorDBContext;
 import com.library.books.persistence.repository.IAuthorRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CreateFabricAuthorService {
 
-    private final IAuthorRepository iAuthorRepository;
+    private final IAuthorDBContext iAuthorDBContext;
 
-    public CreateFabricAuthorService(IAuthorRepository iAuthorRepository) {
-        this.iAuthorRepository = iAuthorRepository;
+    public CreateFabricAuthorService(IAuthorDBContext iAuthorDBContext) {
+        this.iAuthorDBContext = iAuthorDBContext;
     }
 
     public EntityAuthor createEntityAuthor(AuthorDTO authorDTO){
@@ -40,10 +40,9 @@ public class CreateFabricAuthorService {
 
 
     public AuthorDTO save(AuthorDTO authorDTO) {
-        EntityAuthor entityAuthor = iAuthorRepository.save(createEntityAuthor(authorDTO));
+        EntityAuthor entityAuthor = iAuthorDBContext.saveEntityAuthor(createEntityAuthor(authorDTO));
         return createAuthorDTO(entityAuthor);
     }
-
 
 
 }

@@ -1,18 +1,19 @@
 package com.library.books.service.features.commands;
 
+import com.library.books.persistence.dbcontext.IAuthorDBContext;
 import com.library.books.persistence.repository.IAuthorRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DeleteFabricAuthorService {
 
-    private final IAuthorRepository iAuthorRepository;
+    private final IAuthorDBContext iAuthorDBContext;
 
-    public DeleteFabricAuthorService(IAuthorRepository iAuthorRepository) {
-        this.iAuthorRepository = iAuthorRepository;
+    public DeleteFabricAuthorService(IAuthorDBContext iAuthorDBContext) {
+        this.iAuthorDBContext = iAuthorDBContext;
     }
 
     public void deleteById(Long id){
-        iAuthorRepository.deleteById(id);
+        iAuthorDBContext.deleteEntityAuthorById(id);
     }
 }
