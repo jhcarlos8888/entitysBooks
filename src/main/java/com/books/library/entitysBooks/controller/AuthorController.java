@@ -30,4 +30,10 @@ public class AuthorController {
     public ResponseEntity<List<AuthorDTO>> getAllAuthors(){
         return new ResponseEntity<>(getAllFabricAuthorService.findAll(),HttpStatus.OK);
     }
+
+    @GetMapping("/author/{id}")
+    public ResponseEntity<AuthorDTO> getAuthorById(@PathVariable Long id){
+        return new ResponseEntity<>(getAllFabricAuthorService.findById(id),HttpStatus.OK);
+    }
+
 }
