@@ -1,6 +1,7 @@
 package com.books.library.entitysBooks.service.features.queries;
 
 import com.books.library.entitysBooks.domain.dto.BookDTO;
+import com.books.library.entitysBooks.domain.mapper.MapperBook;
 import com.books.library.entitysBooks.persistence.dbcontext.IBookDBContext;
 import com.books.library.entitysBooks.service.features.commands.CreateFabricBookService;
 import org.springframework.stereotype.Service;
@@ -10,19 +11,17 @@ import java.util.List;
 public class GetAllFabricBookService {
     private final IBookDBContext iBookDBContext;
 
-    private final CreateFabricBookService createFabricBookService;
-
-    public GetAllFabricBookService(IBookDBContext iBookDBContext, CreateFabricBookService createFabricBookService) {
+    public GetAllFabricBookService(IBookDBContext iBookDBContext) {
         this.iBookDBContext = iBookDBContext;
-        this.createFabricBookService = createFabricBookService;
+
     }
 
 
     public List<BookDTO> findAll(){
-        return createFabricBookService.createBooksDTO(iBookDBContext.getEntitiesBooks());
+        return MapperBook.createBooksDTO(iBookDBContext.getEntitiesBooks());
     }
 
     public BookDTO findById(Long id){
-        return createFabricBookService.createBookDTO(iBookDBContext.getEntityBookById(id));
+        return MapperBook.createBookDTO(iBookDBContext.getEntityBookById(id));
     }
 }
