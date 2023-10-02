@@ -5,7 +5,7 @@ import com.books.library.entitysBooks.service.features.commands.CreateFabricAuth
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/library")
+@RequestMapping("api/v1/library")
 public class AuthorController {
     private final CreateFabricAuthorService createFabricAuthorService;
 
