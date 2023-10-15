@@ -1,5 +1,6 @@
 package com.books.library.entitysBooks.domain.dto;
 
+import com.books.library.entitysBooks.domain.mapper.MapperAuthor;
 import com.books.library.entitysBooks.domain.model.EntityBook;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class BookDTO {
     private BigDecimal price;
     private LocalDate dateOfEdition;
     private AuthorDTO authorDTO;
+    private Long idAuthor;
 
 
     public BookDTO(EntityBook entityBook) {
@@ -29,6 +31,6 @@ public class BookDTO {
         this.numberOfPage = entityBook.getNumberOfPage();
         this.price = entityBook.getPrice();
         this.dateOfEdition = entityBook.getDateOfEdition();
-        this.authorDTO = new AuthorDTO(entityBook.getAuthor());
+       // this.authorDTO = new AuthorDTO(entityBook.getAuthor());
     }
 }

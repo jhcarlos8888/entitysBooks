@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -21,6 +22,8 @@ public class EntityAuthor {
     private String secondName;
     @Column(name = "phone")
     private String phone;
+    @OneToMany(mappedBy = "author")
+    private List<EntityBook> entityBookList;
 
     public EntityAuthor(AuthorDTO authorDTO) {
         this.id = authorDTO.getId();
