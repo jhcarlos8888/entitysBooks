@@ -3,7 +3,6 @@ package com.books.library.entitysBooks.domain.mapper;
 import com.books.library.entitysBooks.domain.dto.AuthorDTO;
 import com.books.library.entitysBooks.domain.model.EntityAuthor;
 import lombok.experimental.UtilityClass;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +10,23 @@ import java.util.List;
 public class MapperAuthor {
 
     public EntityAuthor createEntityAuthor(AuthorDTO authorDTO){
-        return new EntityAuthor(authorDTO);
+        EntityAuthor entityAuthor = new EntityAuthor();
+        entityAuthor.setId(authorDTO.getId());
+        entityAuthor.setFirstName(authorDTO.getFirstName());
+        entityAuthor.setSecondName(authorDTO.getSecondName());
+        entityAuthor.setPhone(authorDTO.getPhone());
+        return entityAuthor;
     }
 
     public AuthorDTO createAuthorDTO(EntityAuthor entityAuthor){
-        return new AuthorDTO(entityAuthor);
+        AuthorDTO authorDTO = new AuthorDTO();
+        authorDTO.setId(entityAuthor.getId());
+        authorDTO.setFirstName(entityAuthor.getFirstName());
+        authorDTO.setSecondName(entityAuthor.getSecondName());
+        authorDTO.setPhone(entityAuthor.getPhone());
+        authorDTO.setBookDTOList(entityAuthor.getEntityBookList() == null ? null :
+                MapperBook.createBooksDTO(entityAuthor.getEntityBookList()));
+        return authorDTO;
     }
 
 

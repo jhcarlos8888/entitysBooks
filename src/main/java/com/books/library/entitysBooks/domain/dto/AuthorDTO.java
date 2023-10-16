@@ -16,12 +16,4 @@ public class AuthorDTO {
     private String phone;
     private List<BookDTO> bookDTOList;
 
-
-    public AuthorDTO(EntityAuthor entityAuthor) {
-        this.id = entityAuthor.getId();
-        this.firstName = entityAuthor.getFirstName();
-        this.secondName = entityAuthor.getSecondName();
-        this.phone = entityAuthor.getPhone();
-        this.bookDTOList = MapperBook.createBooksDTO(entityAuthor.getEntityBookList());
-    }
 }

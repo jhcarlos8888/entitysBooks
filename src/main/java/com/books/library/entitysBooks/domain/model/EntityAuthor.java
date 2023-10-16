@@ -25,10 +25,4 @@ public class EntityAuthor {
     @OneToMany(mappedBy = "author")
     private List<EntityBook> entityBookList;
 
-    public EntityAuthor(AuthorDTO authorDTO) {
-        this.id = authorDTO.getId();
-        this.firstName = authorDTO.getFirstName();
-        this.secondName = authorDTO.getSecondName();
-        this.phone = authorDTO.getPhone();
-    }
 }

@@ -33,15 +33,4 @@ public class EntityBook {
     @ManyToOne
     private EntityAuthor author;
 
-    public EntityBook(BookDTO bookDTO) {
-        this.id = bookDTO.getId();
-        this.isbn = bookDTO.getIsbn();
-        this.nameBook = bookDTO.getNameBook();
-        this.editorial = bookDTO.getEditorial();
-        this.gender = bookDTO.getGender();
-        this.numberOfPage = bookDTO.getNumberOfPage();
-        this.price = bookDTO.getPrice();
-        this.dateOfEdition = bookDTO.getDateOfEdition();
-        this.author = new EntityAuthor(bookDTO.getAuthorDTO());
-    }
 }
